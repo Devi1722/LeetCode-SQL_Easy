@@ -1,0 +1,8 @@
+# Question
+https://leetcode.com/problems/rising-temperature/?envType=study-plan-v2&envId=top-sql-50
+
+# Solution
+SELECT w.id
+FROM Weather w
+JOIN Weather we ON w.recordDate = DATE_ADD(we.recordDate,INTERVAL 1 DAY)
+WHERE w.temperature > we.temperature
