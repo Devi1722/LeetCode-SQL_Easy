@@ -7,3 +7,10 @@ FROM Users u
 JOIN Register r USING(user_id)
 GROUP BY contest_id
 ORDER BY percentage DESC, contest_id ASC
+
+
+# Explanation
+# Specifically, the issue lies with COUNT(u.user_id).
+# When used within the same grouping context as COUNT(r.contest_id),
+# it does not give the total number of users but instead counts the number of users associated with each contest registration. 
+# This results in an incorrect denominator for the percentage calculation.
