@@ -1,0 +1,8 @@
+# Question
+https://leetcode.com/problems/employee-bonus/?envType=study-plan-v2&envId=top-sql-50
+
+# Solution
+SELECT name,bonus
+FROM Employee
+LEFT JOIN Bonus USING(empId)
+WHERE bonus < 1000 OR bonus IS NULL
